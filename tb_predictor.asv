@@ -1,4 +1,4 @@
-function [tbRes, tbAct, err, mapeSum] = tb_predictor()
+function [tbRes, tbAct, err, mapeSum] = tb_predictor(data)
 
 
 %%  Give the number of features, and how far ahead we are predicting
