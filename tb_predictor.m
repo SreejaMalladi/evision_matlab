@@ -2,36 +2,9 @@ function [tbRes, tbAct, err, mapeSum] = tb_predictor()
 
 
 %%  Give the number of features, and how far ahead we are predicting
-numFilesUsed = 5;
+numFilesUsed = 2;
 PredictAheadBy = 4;
 
-
-%%
-tb_india = readtable('data/tb_dataset_india.csv');
-tb_uttar = readtable('data/tb_dataset_uttar_pradesh.csv');
-tb_gujarat =  readtable('data/tb_dataset_gujarat.csv');
-tb_maharashtra = readtable('data/tb_dataset_maharashtra.csv')
-tb_trend  = readtable('data/Interest in TB India.csv')
-%%
-tb_uttar(:,"Var1") = []
-tb_uttar(:,"Var2") = []
-tb_uttar(1,:) = []
-tb_maharashtra(:,"Var1") = []
-tb_maharashtra(:,"Var2") = []
-tb_maharashtra(1,:) = []
-tb_gujarat(:,"Var1") = []
-tb_gujarat(:,"Var2") = []
-tb_gujarat(1,:) = []
-tb_trend(:,"Dates") = []
-tb_india(:,"Var1") = []
-tb_india(:,"Dates") = []
-
-
-%%
-
-
-data = [tb_india{:,:},tb_uttar{:,:}',tb_gujarat{:,:}',tb_maharashtra{:,:}',tb_trend{:,:}];
-writematrix(data, "tb_data.csv")
 
 %data (isnan(final_data ))=0; %replace NaN values with 0
 

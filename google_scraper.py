@@ -142,8 +142,10 @@ def fetch_data_from_csv(terms: str, level: str, states: str = None) -> pd.DataFr
 
 # scrape(['US-CA'], ['loss of smell', 'loss of taste'], 'en', '2020-01-26 2021-02-12')
 
-fulldata = fetch_data_from_csv('flu', 'National', 'Alabama')
+fulldata = fetch_data_from_csv('flu', 'National', '')
 def get_dates(data):
+    dates = data["date"]
+    dates.to_csv("dates.csv", index = False)
     dates = data["date"].to_list()
     return dates
 def get_data(data):
